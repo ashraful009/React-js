@@ -1,16 +1,36 @@
 
-import './App.css'
-import Card from './components/Card'
+// import './App.css'
+
+import { useState } from "react"
+
+// import Card from './components/Card'
 function App() {
-  
+  const [color, setColor] = useState('red')
 
   return (
-    <>
-      <h1 className='bg-green-400 text-black p-4 rounded-xl mb-4'>Tailwind Test</h1>
-      <Card username={'Ashraful'} btnText='Click >'/>
-      <Card username = {'Atika'}/> 
-    </>
-  )
-}
+    <div className="w-full h-screen duration-2000" style={{ backgroundColor: color }}>
+      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+        <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
+          
+          <button onClick={() => setColor("red")} 
+          className="px-4 py-1 rounded-full text-white shadow-lg" 
+          style={{ backgroundColor: "red" }}>Red</button>
 
+          <button onClick={() => setColor("green")} 
+          className="px-4 py-1 rounded-full text-white shadow-lg" 
+          style={{ backgroundColor: "green" }}>Green</button>
+
+          <button onClick={() => setColor("blue")} 
+          className="px-4 py-1 rounded-full text-white shadow-lg" 
+          style={{ backgroundColor: "blue" }}>Blue</button>
+
+          <button onClick={() => setColor("olive")} 
+          className="px-4 py-1 rounded-full text-white shadow-lg" 
+          style={{ backgroundColor: "olive" }}>Olive</button>
+
+        </div>
+      </div>
+    </div>
+  );
+}
 export default App
